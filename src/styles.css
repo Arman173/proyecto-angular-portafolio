@@ -1,1 +1,236 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importar fuentes personalizadas */
+@font-face {
+    font-family: "yanone";
+    src: url("./assets/fonts/yanone.ttf");
+}
+@font-face {
+    font-family: "finger";
+    src: url("./assets/fonts/finger.ttf");
+}
+
+/* GENERALES */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "yanone", Arial, Helvetica;
+    font-size: 20px;
+    background: url("./assets/img/pattern.png");
+    background-attachment: fixed;
+}
+
+.clearflix {
+    float: none;
+    clear: both;
+}
+
+
+/* BARRA DE NAVEGACION / HEADER */
+header {
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgba(53, 103, 164, 0.8);
+    position: fixed;
+    text-transform: uppercase;
+}
+
+header ul {
+    display: block;
+    width: 30%;
+    height: inherit;
+    margin: 0px auto;
+    margin-top: -4px;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 90px;
+}
+
+header a {
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+header a:hover,
+.actived {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+/* LOGOTIPO */
+#logo {
+    font-family: "finger";
+    font-size: 30px;
+}
+
+#logo a {
+    transition: color 500ms, transform 500ms;
+}
+
+#logo a:hover {
+    background: transparent;
+    color: black;
+    transform: scale(1.50, 1.50);
+}
+
+
+/* CONTENEDOR PRINCIPAL */
+#content {
+    min-height: 600px;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 40px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    background: rgba(255, 255, 255, 0.7);
+    padding-top: 120px;
+}
+
+
+/* PIE DE PAGINA / FOOTER */
+footer {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* SOBRE MI */
+#title {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+#title h1 {
+    font-family: "finger";
+    font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+#title h2 {
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+article.about {
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 20px;
+    font-size: 23px;
+}
+
+.about h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.about p {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: justify;
+}
+
+
+/* SECCION CON FORMULARIO */
+.container {
+    padding: 50px;
+    padding-top: 10px;
+
+}
+
+.container h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+form {
+    width: 50%;
+}
+
+form label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea {
+    width: 60%;
+    padding: 5px;
+}
+
+form button,
+form input[type="submit"] {
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 15px;
+    color: white;
+    background: rgba(53, 103, 164);
+    border: 1px solid rgba(13, 67, 133, 1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background: rgba(53, 103, 164, 0.8);
+}
+
+form input[disabled] {
+    background: rgba(53, 103, 164, 0.5) !important;
+    cursor: not-allowed;
+}
+
+.form_error {
+    font-size: 16px;
+    padding: 3px;
+    background: red;
+    color: white;
+    margin-left: 5px;
+}
+
+.message {
+    width: 30%;
+    padding: 5px;
+    border: 1px solid #eee;
+}
+
+.message a {
+    color: white;
+}
+
+.success {
+    background: green;
+    color: white;
+}
+
+.failed {
+    background: red;
+    color: white;
+}
