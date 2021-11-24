@@ -16,6 +16,7 @@ export class CreateComponent implements OnInit {
   
   public title:string;
   public project:Project;
+  public saveProject:any;
   public status:string = '';
   public filesToUpload: Array<File> = [];
 
@@ -24,7 +25,8 @@ export class CreateComponent implements OnInit {
     private _uploadService:UploadService
   ) {
     this.title = "Crear Projecto";
-    this.project = new Project('','','','',2020,'','');
+    this.project = new Project('','','','',2021,'','');
+    this.saveProject = new Project('','','','',2021,'','');
     // public _id:string,
     // public name:string,
     // public description:string,
@@ -38,20 +40,23 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit( form:NgForm ) {
-    console.log( this.project );
+    //console.log( this.project );
     // Guardar datos basicos
     this._projectService.saveProject(this.project).subscribe(
       response => {
-        console.log( response );
+        //console.log( response );
         if( response.project ) {
-          this.status = 'success';
 
           // Subir la imagen
-          this._uploadService.makeFileRequest(Global.url+'upload-image/'+response.project._id, [], this.filesToUpload, 'imagen').then( ( result:any ) => {
-            console.log( result );
+          this._uploadService.makeFileRequest(Global.url+'upload-image/'+response.project._id, [], this.filesToUpload, 'image').then( ( result:any ) => {
+            
+            this.saveProject = result.project;
+            
+            this.status = 'success';
+            form.reset();
+            console.log( result.project );
           });
 
-          form.reset();
         } else {
           this.status = 'failed';
         }
