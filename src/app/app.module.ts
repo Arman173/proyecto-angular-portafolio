@@ -13,6 +13,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { ResaltadoDirective } from './resaltado.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { EditComponent } from './components/edit/edit.component';
     ContactComponent,
     ErrorComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    SliderComponent,
+    ResaltadoDirective
   ],
   imports: [
     BrowserModule,
